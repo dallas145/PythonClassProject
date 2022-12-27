@@ -1,6 +1,7 @@
 import tkinter as tk
 from signup import signup
 
+
 def sign_f():
     signup(name.get())
 
