@@ -1,5 +1,8 @@
 import tkinter as tk
 from signup import signup
+from opencvtest import opencv1 
+
+
 
 def sign_f():
     signup(name.get())
@@ -33,7 +36,7 @@ frame2 = tk.Frame(win,pady=3)
 frame2.pack()
 bt1 = tk.Button(frame2,text="登入",padx=17,pady=15)
 bt2 = tk.Button(frame2,text="註冊",padx=17,pady=15,command=signupwindow)
-bt3 = tk.Button(frame2,text="開啟鏡子",padx=5,pady=15)
+bt3 = tk.Button(frame2,text="開啟鏡子",padx=5,pady=15,command=opencv1)
 bt4 = tk.Button(frame2,text="登出",padx=17,pady=15)
 bt1.pack()
 bt2.pack()
