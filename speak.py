@@ -38,7 +38,7 @@ def tts111():
                     elif "天氣" in listen_text or "溫度" in listen_text:
                         talk('今天有點冷，小心確診', 'zh-tw')
                         sleep(3)
-                    elif "什麼" in listen_text:
+                    elif "什麼" in listen_text or "怎麼" in listen_text:
                         sth = '我不知道'
                         talk(sth, 'zh-tw')
                         sleep(1)
