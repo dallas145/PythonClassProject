@@ -1,6 +1,19 @@
 import tkinter as tk
 from signup import signup
-from opencvtest import opencv1 
+from opencvtest import main 
+from talk import talk
+from speak import tts111
+import threading
+from time import sleep
+
+
+
+def main_f():
+    t = threading.Thread(target=main)
+    t1 = threading.Thread(target=tts111)
+    t.start()
+    sleep(6)
+    t1.start()
 
 
 
@@ -37,11 +50,11 @@ frame2 = tk.Frame(win,pady=3)
 frame2.pack()
 bt1 = tk.Button(frame2,text="登入",padx=17,pady=15)
 bt2 = tk.Button(frame2,text="註冊",padx=17,pady=15,command=signupwindow)
-bt3 = tk.Button(frame2,text="開啟鏡子",padx=5,pady=15,command=opencv1)
+bt3 = tk.Button(frame2,text="開啟鏡子",padx=5,pady=15,command=main_f)
 bt4 = tk.Button(frame2,text="登出",padx=17,pady=15)
-bt1.pack()
+# bt1.pack()
 bt2.pack()
 bt3.pack()
-bt4.pack()
+# bt4.pack()
 
 win.mainloop()
