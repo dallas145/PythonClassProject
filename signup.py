@@ -5,7 +5,7 @@ from time import sleep
 import sqlite3
 
 def saveImg(image, index, name):
-    filename = '../images/' + name + '/face{:03d}.jpg'.format(index)
+    filename = 'images/' + name + '/face{:03d}.jpg'.format(index)
     cv2.imwrite(filename, image)
 
 def getid(name):
@@ -26,12 +26,12 @@ def signup(name):
     faces = []
     ids = []
     #name=input('輸入姓名(使用英文): ')
-    if os.path.isdir('../images/'+ name):
+    if os.path.isdir('images/'+ name):
         print('此姓名已存在！')
     else:
-        os.makedirs('../images/'+name)
+        os.makedirs('images/'+name)
         id = getid(name)
-        face_cascade = cv2.CascadeClassifier("../haarcascade_frontalface_alt2.xml")
+        face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt2.xml")
         cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
         cv2.namedWindow('video', cv2.WINDOW_NORMAL)
         while index > 0:
@@ -60,10 +60,10 @@ def signup(name):
     labels = []
     labelstr = []
     count = 0
-    dirs = os.listdir('../images')
+    dirs = os.listdir('images')
     for d in dirs:
-        if os.path.isdir('../images/'+d):
-            files = glob.glob('../images/'+d+'/*.jpg')
+        if os.path.isdir('images/'+d):
+            files = glob.glob('images/'+d+'/*.jpg')
             for filename in files:
                 img = cv2.imread(filename, cv2.COLOR_BGR2GRAY)
                 images.append(img)
